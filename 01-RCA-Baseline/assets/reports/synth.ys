@@ -1,0 +1,27 @@
+# --- 1. Load the Source Code ---
+# We use ../rtl/ because the script is in /synth but the code is in /rtl
+read_verilog ../rtl/alu_slice.v ../rtl/alu_top.v
+
+# --- 2. Build the Design Hierarchy ---
+# This ensures Yosys understands that alu_top is the 'Parent'
+hierarchy -check -top alu_top
+
+# --- 3. The Synthesis 'Engine' ---
+# proc: Converts 'always' blocks into logic
+# opt: Removes unused wires/logic
+# fsm: Identifies and optimizes state machines
+proc; opt; fsm; opt; share; opt;
+
+# --- 4. Logic Mapping ---
+# This turns abstract math (+, -) into generic logic gates
+techmap; opt; abc; opt
+
+clean
+
+# --- 5. Output the Netlist ---
+# This creates the final gate-level file
+write_verilog alu_gate_level.v
+
+# --- 6. Show Results ---
+# This prints the gate count and cell statistics
+stat

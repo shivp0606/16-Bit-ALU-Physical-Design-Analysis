@@ -1,0 +1,354 @@
+$date
+	Sun May 10 18:15:39 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module rca_alu_top_tb $end
+$var wire 1 ! so_top $end
+$var wire 16 " result [15:0] $end
+$var wire 1 # cout_final $end
+$var reg 16 $ a [15:0] $end
+$var reg 16 % b [15:0] $end
+$var reg 1 & clk $end
+$var reg 3 ' opcode [2:0] $end
+$var reg 1 ( rst_n $end
+$var reg 1 ) scan_en $end
+$var reg 1 * si_top $end
+$scope module dut $end
+$var wire 16 + a_16bit [15:0] $end
+$var wire 16 , b_16bit [15:0] $end
+$var wire 1 & clk $end
+$var wire 3 - opcode [2:0] $end
+$var wire 1 ( rst_n $end
+$var wire 1 ) scan_en $end
+$var wire 1 * si_top $end
+$var wire 1 ! so_top $end
+$var wire 1 . s2 $end
+$var wire 1 / s1 $end
+$var wire 1 0 s0 $end
+$var wire 16 1 result_16bit [15:0] $end
+$var wire 1 # cout_final $end
+$var wire 1 2 c2 $end
+$var wire 1 3 c1 $end
+$var wire 1 4 c0 $end
+$scope module slice0 $end
+$var wire 4 5 a [3:0] $end
+$var wire 4 6 b [3:0] $end
+$var wire 1 7 cin $end
+$var wire 1 & clk $end
+$var wire 3 8 opcode [2:0] $end
+$var wire 1 ( rst_n $end
+$var wire 1 ) scan_en $end
+$var wire 1 * si $end
+$var wire 1 0 so $end
+$var wire 5 9 full_sum [4:0] $end
+$var wire 1 4 cout $end
+$var reg 4 : result [3:0] $end
+$upscope $end
+$scope module slice1 $end
+$var wire 4 ; a [3:0] $end
+$var wire 4 < b [3:0] $end
+$var wire 1 4 cin $end
+$var wire 1 & clk $end
+$var wire 3 = opcode [2:0] $end
+$var wire 1 ( rst_n $end
+$var wire 1 ) scan_en $end
+$var wire 1 0 si $end
+$var wire 1 / so $end
+$var wire 5 > full_sum [4:0] $end
+$var wire 1 3 cout $end
+$var reg 4 ? result [3:0] $end
+$upscope $end
+$scope module slice2 $end
+$var wire 4 @ a [3:0] $end
+$var wire 4 A b [3:0] $end
+$var wire 1 3 cin $end
+$var wire 1 & clk $end
+$var wire 3 B opcode [2:0] $end
+$var wire 1 ( rst_n $end
+$var wire 1 ) scan_en $end
+$var wire 1 / si $end
+$var wire 1 . so $end
+$var wire 5 C full_sum [4:0] $end
+$var wire 1 2 cout $end
+$var reg 4 D result [3:0] $end
+$upscope $end
+$scope module slice3 $end
+$var wire 4 E a [3:0] $end
+$var wire 4 F b [3:0] $end
+$var wire 1 2 cin $end
+$var wire 1 & clk $end
+$var wire 3 G opcode [2:0] $end
+$var wire 1 ( rst_n $end
+$var wire 1 ) scan_en $end
+$var wire 1 . si $end
+$var wire 1 ! so $end
+$var wire 5 H full_sum [4:0] $end
+$var wire 1 # cout $end
+$var reg 4 I result [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 I
+b0 H
+b0 G
+b0 F
+b0 E
+b0 D
+b0 C
+b0 B
+b0 A
+b0 @
+b0 ?
+b0 >
+b0 =
+b0 <
+b0 ;
+b0 :
+b0 9
+b0 8
+07
+b0 6
+b0 5
+04
+03
+02
+b0 1
+00
+0/
+0.
+b0 -
+b0 ,
+b0 +
+0*
+0)
+0(
+b0 '
+0&
+b0 %
+b0 $
+0#
+b0 "
+0!
+$end
+#5000
+1&
+#10000
+0&
+#15000
+1&
+#20000
+0&
+#25000
+1&
+1(
+#30000
+1#
+12
+13
+14
+b1 6
+b10000 9
+b1111 5
+b10000 >
+b1111 ;
+b10000 C
+b1111 @
+b10000 H
+b1111 E
+b1 %
+b1 ,
+b1111111111111111 $
+b1111111111111111 +
+0&
+#35000
+1&
+#40000
+0&
+#45000
+1&
+#50000
+0&
+#55000
+1&
+#60000
+b1 9
+b0 5
+b1 >
+b0 ;
+b1 C
+b0 @
+b1 H
+b0 E
+b1 '
+b1 -
+b1 8
+b1 =
+b1 B
+b1 G
+b0 $
+b0 +
+0&
+#65000
+1!
+1.
+1/
+10
+b1111 I
+b1111 D
+b1111 ?
+b1111111111111111 "
+b1111111111111111 1
+b1111 :
+1&
+#70000
+0&
+#75000
+1&
+#80000
+0&
+#85000
+1&
+#90000
+b0 >
+04
+b0 C
+03
+02
+1#
+b0 9
+b0 6
+b1000 F
+b10000 H
+b1000 E
+b0 '
+b0 -
+b0 8
+b0 =
+b0 B
+b0 G
+b1000000000000000 %
+b1000000000000000 ,
+b1000000000000000 $
+b1000000000000000 +
+0&
+#95000
+00
+0/
+0.
+0!
+b0 :
+b0 ?
+b0 D
+b0 "
+b0 1
+b0 I
+1&
+#100000
+0&
+#105000
+1&
+#110000
+0&
+#115000
+1&
+#120000
+0#
+b101 6
+b101 <
+b101 A
+b101 F
+b1111 9
+b1010 5
+b1111 >
+b1010 ;
+b1111 C
+b1010 @
+b1111 H
+b1010 E
+b10 '
+b10 -
+b10 8
+b10 =
+b10 B
+b10 G
+b101010101010101 %
+b101010101010101 ,
+b1010101010101010 $
+b1010101010101010 +
+0&
+#125000
+1&
+#130000
+0&
+#135000
+1&
+#140000
+0&
+#145000
+1&
+#150000
+b1111 6
+b0 <
+b1111 A
+b0 F
+b1111 9
+b0 5
+b1111 >
+b1111 ;
+b1111 C
+b0 @
+b1111 H
+b1111 E
+b11 '
+b11 -
+b11 8
+b11 =
+b11 B
+b11 G
+b111100001111 %
+b111100001111 ,
+b1111000011110000 $
+b1111000011110000 +
+0&
+#155000
+10
+1/
+1.
+1!
+b1111 :
+b1111 ?
+b1111 D
+b1111111111111111 "
+b1111111111111111 1
+b1111 I
+1&
+#160000
+0&
+#165000
+1&
+#170000
+0&
+#175000
+1&
+#180000
+1)
+0&
+#185000
+1&
+#190000
+0&
+#195000
+1&
+#200000
+0&

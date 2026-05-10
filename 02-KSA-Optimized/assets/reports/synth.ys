@@ -1,0 +1,30 @@
+# --- 1. Load the Source Code ---
+# We use ../rtl/ because the script is in /synth but the code is in /rtl
+read_verilog ../rtl/cells.v ../rtl/ksa_16bit.v
+
+# --- 2. Build the Design Hierarchy ---
+# This ensures Yosys understands that ksa_16bit.v is the 'Parent'
+hierarchy  -top ksa_16bit
+
+# --- 3. The Synthesis 'Engine' ---
+# proc: Converts 'always' blocks into logic
+# opt: Removes unused wires/logic
+# fsm: Identifies and optimizes state machines
+proc; 
+# opt; fsm; opt; 
+
+# --- 4. Logic Mapping ---
+# This turns abstract math (+, -) into generic logic gates
+techmap; opt; abc; opt
+
+#clean
+
+# --- 5. Output the Netlist ---
+# This creates the final gate-level file
+#write_verilog ksa_alu_gate_level.v
+
+# --- 6. Show Results ---
+# This prints the gate count and cell statistics
+#flatten
+#opt
+stat
