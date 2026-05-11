@@ -31,7 +31,7 @@ The RCA served as our control group. While structurally simple, the physical imp
 ---
 
 ## 02. Kogge-Stone Adder (KSA) - High-Speed Optimization
-The KSA uses a parallel-prefix tree to calculate carries in $O(\log_2 N)$ time. This section documents the push for maximum performance, navigating the trade-off between power and frequency.
+The KSA uses a parallel-prefix tree to calculate carries in $O(\log_2 N)$ time. This section documents the push for maximum performance, navigating the trade-offs between power and frequency.
 
 ### **KSA Optimization Matrix**
 | Iteration | Objective | Strategy | Area ($\mu m^2$) | WNS (Slack) | $f_{max}$ | Total Power |
@@ -62,9 +62,13 @@ The results demonstrate the massive performance gain achievable through architec
 ### Physical Layout (GDSII)
 The KLayout captures illustrate the architectural shift: the RCA shows a linear placement of slices, while the KSA highlights the dense routing density of the parallel-prefix tree.
 
+![RCA Baseline Layout](./01-RCA-Baseline/assets/visuals/rca_klayout.png)
+![KSA Golden Layout](./02-KSA-Optimized/assets/visuals/ksa_klayout.png)
+
 ### Functional Verification
 Verification was performed via gate-level simulation (GLS) using Icarus Verilog. The KSA waveform explicitly tracks the five levels of internal generate ($g0$–$g4$) and propagate ($p0$–$p4$) signals, confirming architectural integrity.
 
+![KSA Verification Waveform](./02-KSA-Optimized/assets/waveforms/ksa_verification_waves.png)
 
 ---
 
@@ -75,9 +79,35 @@ Verification was performed via gate-level simulation (GLS) using Icarus Verilog.
 ---
 
 ## How to Reproduce
-1. Install the **OpenLane** toolchain and **Sky130 PDK**.
-2. Clone this repository.
-3. To run the Golden KSA design:
+
+To reproduce these results, you must have the **OpenLane** toolchain installed. 
+
+1. **Clone the repository** into your OpenLane `designs/` folder:
    ```bash
-   cd 02_KSA_Optimized_Timing
-   flow.tcl -design ksa_16bit -tag golden_run
+   cd [path-to-openlane]/designs
+   git clone [https://github.com/mokshith777/16-Bit-ALU-Physical-Design-Analysis.git](https://github.com/mokshith777/16-Bit-ALU-Physical-Design-Analysis.git)
+
+2. **Navigate back to the OpenLane root directory:
+   ```bash
+   cd ..
+  
+3. **Run the flow for the designed architecture:
+
+   For the KSA Golden Run:
+    ```bash
+     ./flow.tcl -design 16-Bit-ALU-Physical-Design-Analysis/02-KSA-Optimized -tag golden_run
+    ```
+
+   For the RCA Baseline:
+    ```bash
+     ./flow.tcl -design 16-Bit-ALU-Physical-Design-Analysis/01-RCA-Baseline -tag baseline_run 
+    ```
+
+# Final Engineering Note
+
+This project represents a complete **RTL-to-GDSII flow**. The KSA implementation successfully pushed the **Sky130 PDK** to a timing-critical limit (+0.02 ns slack), providing a high-performance ALU core suitable for speed-oriented digital system.
+
+
+
+
+   
