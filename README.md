@@ -8,7 +8,7 @@ Using the **OpenLane** automated RTL-to-GDSII flow and the **Sky130 PDK**, I per
 ## Technical Stack
 * **HDL:** Verilog (Structural & Behavioral)
 * **PDK:** SkyWater 130nm (Sky130)
-* **Synthesis & PnR:** OpenLane, Yosys, ABC, OpenROAD
+* **Synthesis & PnR:** OpenLane, Yosys
 * **Static Timing Analysis (STA):** OpenSTA
 * **Physical Verification:** KLayout, Magic (DRC/LVS)
 * **Simulation:** Icarus Verilog, GTKWave
