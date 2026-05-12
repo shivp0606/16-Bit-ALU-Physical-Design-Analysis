@@ -66,7 +66,7 @@ The KLayout captures illustrate the architectural shift: the RCA shows a linear 
 ![KSA Golden Layout](./02-KSA-Optimized/assets/visuals/ksa_klayout.png)
 
 ### Functional Verification
-Verification was performed via gate-level simulation (GLS) using Icarus Verilog. The KSA waveform explicitly tracks the five levels of internal generate ($g0$–$g4$) and propagate ($p0$–$p4$) signals, confirming architectural integrity.
+Verification was performed via gate-level simulation (GLS) using Icarus Verilog. The KSA waveform explicitly tracks the five levels of internal generate (g0–g4) and propagate (p0–p4) signals, confirming architectural integrity.
 
 ![KSA Verification Waveform](./02-KSA-Optimized/assets/waveforms/ksa_verification_waves.png)
 
