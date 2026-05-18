@@ -1,7 +1,7 @@
 read_verilog hdl/ksa_cells.v 
 read_verilog hdl/ksa_16bit.v
 
-hierarchy  -top ksa_16bit
+hierarchy -check -top ksa_16bit
 
 proc; opt; fsm; opt; 
 
