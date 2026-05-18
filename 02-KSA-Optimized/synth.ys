@@ -7,7 +7,7 @@ proc; opt; fsm; opt;
 
 techmap; opt; abc; opt
 
-#clean
+clean
 
 write_verilog ksa_gatelevel.v
 
